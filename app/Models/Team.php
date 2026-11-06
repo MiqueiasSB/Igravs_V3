@@ -26,7 +26,7 @@ use Illuminate\Support\Carbon;
  * @property-read Collection<int, Membership> $memberships
  * @property-read Collection<int, User> $members
  */
-#[Fillable(['name', 'slug', 'is_personal'])]
+#[Fillable(['name', 'slug', 'city', 'plan', 'trial_ends_at', 'is_personal'])]
 class Team extends Model
 {
     /** @use HasFactory<TeamFactory> */
@@ -35,6 +35,17 @@ class Team extends Model
     /**
      * Bootstrap the model and its traits.
      */
+
+    public function people()
+    {
+        return $this->hasMany(Person::class);
+    }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+    
     protected static function boot(): void
     {
         parent::boot();
@@ -104,6 +115,7 @@ class Team extends Model
     {
         return [
             'is_personal' => 'boolean',
+            'trial_ends_at' => 'datetime',
         ];
     }
 

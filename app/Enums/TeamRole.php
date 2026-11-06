@@ -7,6 +7,7 @@ enum TeamRole: string
     case Owner = 'owner';
     case Admin = 'admin';
     case Member = 'member';
+    case Leader = 'leader';
 
     /**
      * Get the display label for the role.
@@ -49,8 +50,9 @@ enum TeamRole: string
     public function level(): int
     {
         return match ($this) {
-            self::Owner => 3,
-            self::Admin => 2,
+            self::Owner => 4,
+            self::Admin => 3,
+            self::Leader => 2,
             self::Member => 1,
         };
     }

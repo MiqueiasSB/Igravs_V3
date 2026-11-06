@@ -29,7 +29,7 @@ class TeamPolicy
      */
     public function create(User $user): bool
     {
-        return true;
+        return $user->allTeams()->count() < 3;
     }
 
     /**
@@ -38,6 +38,17 @@ class TeamPolicy
     public function update(User $user, Team $team): bool
     {
         return $user->hasTeamPermission($team, TeamPermission::UpdateTeam);
+    }
+
+    public function manageSchedules(User $user, Team $team): bool
+    {
+        return $user->hasTeamPermission($team, TeamPermission::ManageSchedules);
+    }
+
+    public function confirmSchedule(User $user, Team $team, int $personId): bool
+    {
+        return $user->belongsToTeam($team)
+            && $team->people()->where('id', $personId)->where('user_id', $user->id)->exists();
     }
 
     /**
