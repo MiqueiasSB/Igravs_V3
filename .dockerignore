@@ -1,0 +1,19 @@
+# Arquivos que NÃO entram na imagem Docker.
+
+.git
+.github
+node_modules
+vendor
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+bootstrap/cache/*
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.phpunit.result.cache
+public/build
+public/hot

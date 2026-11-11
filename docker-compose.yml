@@ -1,0 +1,94 @@
+# docker-compose.yml
+# Ambiente de teste local que simula produção.
+# Sobe o app Laravel + MySQL + Adminer (interface visual do banco).
+
+services:
+  # ------------------------------------------------------------
+  # APP — o container que buildamos hoje
+  # ------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: igravs-app
+    restart: unless-stopped
+    ports:
+      # Expõe a porta 8080 da sua máquina para a 80 do container.
+      - "8080:80"
+    environment:
+      # Ambiente de produção simulado — igual ao EasyPanel.
+      APP_NAME: Igravs
+      APP_ENV: production
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:8080
+      # Chave gerada com php artisan key:generate --show
+      APP_KEY: base64:de4TkZRmsJCHFTc/amklmhcmZgw50MIt5YigUZWDBDY=
+      # Conexão com o serviço "mysql" abaixo (nome do serviço = hostname).
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      DB_DATABASE: igravs
+      DB_USERNAME: igravs
+      DB_PASSWORD: igravs_secret
+      # Cache e sessão no banco — igual produção.
+      CACHE_STORE: database
+      SESSION_DRIVER: database
+      QUEUE_CONNECTION: database
+    depends_on:
+      mysql:
+        # Só sobe o app depois que o MySQL estiver saudável.
+        condition: service_healthy
+    networks:
+      - igravs-net
+
+  # ------------------------------------------------------------
+  # MYSQL — banco de dados
+  # ------------------------------------------------------------
+  mysql:
+    image: mysql:8.4
+    container_name: igravs-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: igravs
+      MYSQL_USER: igravs
+      MYSQL_PASSWORD: igravs_secret
+      MYSQL_ROOT_PASSWORD: root_secret
+    ports:
+      # Expõe a 3307 na sua máquina para não conflitar com MySQL local.
+      # Se você já tem MySQL na 3306, use 3307 para conectar com DBeaver.
+      - "3307:3306"
+    volumes:
+      # Volume nomeado — os dados sobrevivem ao "docker compose down".
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      # O Docker espera o MySQL responder antes de subir o app.
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_secret"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - igravs-net
+
+  # ------------------------------------------------------------
+  # ADMINER — interface visual para o banco (opcional)
+  # Acesse em http://localhost:8081
+  # ------------------------------------------------------------
+  adminer:
+    image: adminer:latest
+    container_name: igravs-adminer
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql
+    networks:
+      - igravs-net
+
+# Redes e volumes nomeados.
+networks:
+  igravs-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
