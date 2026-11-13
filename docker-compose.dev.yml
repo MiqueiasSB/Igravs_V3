@@ -1,41 +1,45 @@
-# docker-compose.dev.yml
 services:
   app:
     build:
       context: .
       dockerfile: Dockerfile.dev
+
     container_name: igravs-app-dev
     restart: unless-stopped
+
     ports:
-      - "8000:8000"   # php artisan serve
-      - "5173:5173"   # Vite dev server (HMR)
+      - "8000:8000"
+      - "5173:5173"
+
     environment:
       APP_NAME: Igravs
       APP_ENV: local
       APP_DEBUG: "true"
       APP_URL: http://localhost:8000
-      APP_KEY: base64:de4TkZRmsJCHFTc/amklmhcmZgw50MIt5YigUZWDBDY=
+
       DB_CONNECTION: mysql
       DB_HOST: mysql
       DB_PORT: "3306"
       DB_DATABASE: igravs
       DB_USERNAME: igravs
       DB_PASSWORD: igravs_secret
+
       CACHE_STORE: file
       SESSION_DRIVER: file
       QUEUE_CONNECTION: sync
-      # CRÍTICO para o HMR funcionar dentro do Docker:
+
       VITE_HMR_HOST: localhost
       VITE_HMR_PORT: "5173"
+
     volumes:
-      # Monta o código — é isso que faz o hot reload enxergar suas mudanças
       - .:/var/www/html
-      # Evita que node_modules e vendor do host sobrescrevam os do container
       - /var/www/html/node_modules
       - /var/www/html/vendor
+
     depends_on:
       mysql:
         condition: service_healthy
+
     networks:
       - igravs-net
 
@@ -43,21 +47,33 @@ services:
     image: mysql:8.4
     container_name: igravs-mysql-dev
     restart: unless-stopped
+
     environment:
       MYSQL_DATABASE: igravs
       MYSQL_USER: igravs
       MYSQL_PASSWORD: igravs_secret
       MYSQL_ROOT_PASSWORD: root_secret
+
     ports:
       - "3307:3306"
+
     volumes:
       - mysql-data-dev:/var/lib/mysql
+
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_secret"]
+      test:
+        - CMD
+        - mysqladmin
+        - ping
+        - -h
+        - localhost
+        - -uroot
+        - -proot_secret
       interval: 5s
       timeout: 5s
       retries: 10
       start_period: 30s
+
     networks:
       - igravs-net
 
@@ -65,10 +81,17 @@ services:
     image: adminer:latest
     container_name: igravs-adminer-dev
     restart: unless-stopped
+
     ports:
       - "8081:8080"
+
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
+
     networks:
       - igravs-net
 
