@@ -1,0 +1,721 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+ Image igravs-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 562B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile.dev
+#2 transferring dockerfile: 868B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/composer:latest
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/php:8.3-cli
+#4 DONE 10.5s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 323B done
+#5 DONE 0.0s
+
+#6 [stage-0 1/9] FROM docker.io/library/php:8.3-cli@sha256:628102249d93494233b54490b785f12db9cd60f4dc89416dfca15973f2125f10
+#6 CACHED
+
+#7 FROM docker.io/library/composer:latest
+#7 CACHED
+
+#8 [internal] load build context
+#8 transferring context: 31.02kB 0.0s done
+#8 DONE 0.0s
+
+#9 [stage-0 2/9] RUN apt-get update && apt-get install -y     git unzip libzip-dev libpng-dev libonig-dev libxml2-dev     && docker-php-ext-install pdo pdo_mysql zip mbstring bcmath
+#9 0.205 Hit:1 http://deb.debian.org/debian trixie InRelease
+#9 0.205 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#9 0.216 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#9 0.227 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#9 0.582 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
+#9 0.583 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [302 kB]
+#9 1.367 Fetched 10.1 MB in 1s (8437 kB/s)
+#9 1.367 Reading package lists...
+#9 2.033 Reading package lists...
+#9 2.671 Building dependency tree...
+#9 2.806 Reading state information...
+#9 3.035 The following additional packages will be installed:
+#9 3.035   git-man less libcbor0.10 libcurl3t64-gnutls libedit2 liberror-perl libexpat1
+#9 3.036   libfido2-1 libngtcp2-16 libngtcp2-crypto-gnutls8 libpng-tools libpng16-16t64
+#9 3.036   libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1 libzip5
+#9 3.037   openssh-client xauth zipcmp zipmerge ziptool zlib1g zlib1g-dev
+#9 3.038 Suggested packages:
+#9 3.038   gettext-base git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki
+#9 3.038   git-svn keychain libpam-ssh monkeysphere ssh-askpass zip
+#9 3.165 The following NEW packages will be installed:
+#9 3.165   git git-man less libcbor0.10 libcurl3t64-gnutls libedit2 liberror-perl
+#9 3.165   libexpat1 libfido2-1 libngtcp2-16 libngtcp2-crypto-gnutls8 libonig-dev
+#9 3.166   libpng-dev libpng-tools libpng16-16t64 libx11-6 libx11-data libxau6 libxcb1
+#9 3.166   libxdmcp6 libxext6 libxml2-dev libxmuu1 libzip-dev libzip5 openssh-client
+#9 3.166   unzip xauth zipcmp zipmerge ziptool zlib1g-dev
+#9 3.170 The following packages will be upgraded:
+#9 3.170   zlib1g
+#9 3.216 1 upgraded, 32 newly installed, 0 to remove and 1 not upgraded.
+#9 3.216 Need to get 17.7 MB of archives.
+#9 3.216 After this operation, 72.6 MB of additional disk space will be used.
+#9 3.216 Get:1 http://deb.debian.org/debian-security trixie-security/main amd64 libexpat1 amd64 2.9.0-1~deb13u1 [126 kB]
+#9 3.237 Get:2 http://deb.debian.org/debian-security trixie-security/main amd64 zlib1g amd64 1:1.3.dfsg+really1.3.1-1+deb13u1 [88.7 kB]
+#9 3.246 Get:3 http://deb.debian.org/debian trixie/main amd64 less amd64 668-1 [161 kB]
+#9 3.258 Get:4 http://deb.debian.org/debian trixie/main amd64 libedit2 amd64 3.1-20250104-1 [93.8 kB]
+#9 3.262 Get:5 http://deb.debian.org/debian trixie/main amd64 libcbor0.10 amd64 0.10.2-2 [28.3 kB]
+#9 3.262 Get:6 http://deb.debian.org/debian trixie/main amd64 libfido2-1 amd64 1.15.0-1+b1 [78.7 kB]
+#9 3.274 Get:7 http://deb.debian.org/debian trixie/main amd64 openssh-client amd64 1:10.0p1-7+deb13u4 [990 kB]
+#9 3.338 Get:8 http://deb.debian.org/debian trixie/main amd64 libngtcp2-16 amd64 1.11.0-1+deb13u1 [132 kB]
+#9 3.341 Get:9 http://deb.debian.org/debian trixie/main amd64 libngtcp2-crypto-gnutls8 amd64 1.11.0-1+deb13u1 [29.5 kB]
+#9 3.343 Get:10 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl3t64-gnutls amd64 8.14.1-2+deb13u7 [385 kB]
+#9 3.362 Get:11 http://deb.debian.org/debian trixie/main amd64 liberror-perl all 0.17030-1 [26.9 kB]
+#9 3.362 Get:12 http://deb.debian.org/debian trixie/main amd64 git-man all 1:2.47.3-0+deb13u1 [2205 kB]
+#9 3.471 Get:13 http://deb.debian.org/debian trixie/main amd64 git amd64 1:2.47.3-0+deb13u1 [8862 kB]
+#9 3.875 Get:14 http://deb.debian.org/debian trixie/main amd64 libonig-dev amd64 6.9.9-1+b1 [95.5 kB]
+#9 3.880 Get:15 http://deb.debian.org/debian-security trixie-security/main amd64 libpng16-16t64 amd64 1.6.48-1+deb13u6 [283 kB]
+#9 3.891 Get:16 http://deb.debian.org/debian-security trixie-security/main amd64 zlib1g-dev amd64 1:1.3.dfsg+really1.3.1-1+deb13u1 [920 kB]
+#9 3.940 Get:17 http://deb.debian.org/debian-security trixie-security/main amd64 libpng-dev amd64 1.6.48-1+deb13u6 [367 kB]
+#9 3.969 Get:18 http://deb.debian.org/debian-security trixie-security/main amd64 libpng-tools amd64 1.6.48-1+deb13u6 [130 kB]
+#9 3.972 Get:19 http://deb.debian.org/debian trixie/main amd64 libxau6 amd64 1:1.0.11-1 [20.4 kB]
+#9 3.973 Get:20 http://deb.debian.org/debian trixie/main amd64 libxdmcp6 amd64 1:1.1.5-1 [27.8 kB]
+#9 3.974 Get:21 http://deb.debian.org/debian trixie/main amd64 libxcb1 amd64 1.17.0-2+b1 [144 kB]
+#9 3.984 Get:22 http://deb.debian.org/debian trixie/main amd64 libx11-data all 2:1.8.12-1 [343 kB]
+#9 4.005 Get:23 http://deb.debian.org/debian trixie/main amd64 libx11-6 amd64 2:1.8.12-1 [815 kB]
+#9 4.039 Get:24 http://deb.debian.org/debian trixie/main amd64 libxext6 amd64 2:1.3.4-1+b3 [50.4 kB]
+#9 4.039 Get:25 http://deb.debian.org/debian trixie/main amd64 libxml2-dev amd64 2.12.7+dfsg+really2.9.14-2.1+deb13u3 [795 kB]
+#9 4.078 Get:26 http://deb.debian.org/debian trixie/main amd64 libxmuu1 amd64 2:1.1.3-3+b4 [21.9 kB]
+#9 4.078 Get:27 http://deb.debian.org/debian trixie/main amd64 libzip5 amd64 1.11.3-2 [62.6 kB]
+#9 4.081 Get:28 http://deb.debian.org/debian trixie/main amd64 zipcmp amd64 1.11.3-2 [19.8 kB]
+#9 4.081 Get:29 http://deb.debian.org/debian trixie/main amd64 zipmerge amd64 1.11.3-2 [14.5 kB]
+#9 4.081 Get:30 http://deb.debian.org/debian trixie/main amd64 ziptool amd64 1.11.3-2 [22.6 kB]
+#9 4.082 Get:31 http://deb.debian.org/debian trixie/main amd64 libzip-dev amd64 1.11.3-2 [181 kB]
+#9 4.094 Get:32 http://deb.debian.org/debian trixie/main amd64 unzip amd64 6.0-29+deb13u1 [173 kB]
+#9 4.101 Get:33 http://deb.debian.org/debian trixie/main amd64 xauth amd64 1:1.1.2-1.1 [35.9 kB]
+#9 4.235 debconf: unable to initialize frontend: Dialog
+#9 4.235 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#9 4.235 debconf: falling back to frontend: Readline
+#9 4.240 debconf: unable to initialize frontend: Readline
+#9 4.240 debconf: (This frontend requires a controlling tty.)
+#9 4.240 debconf: falling back to frontend: Teletype
+#9 4.244 debconf: unable to initialize frontend: Teletype
+#9 4.244 debconf: (This frontend requires a controlling tty.)
+#9 4.244 debconf: falling back to frontend: Noninteractive
+#9 5.463 Fetched 17.7 MB in 1s (19.3 MB/s)
+#9 5.488 Selecting previously unselected package libexpat1:amd64.
+#9 5.488 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14657 files and directories currently installed.)
+#9 5.496 Preparing to unpack .../libexpat1_2.9.0-1~deb13u1_amd64.deb ...
+#9 5.504 Unpacking libexpat1:amd64 (2.9.0-1~deb13u1) ...
+#9 5.542 Preparing to unpack .../zlib1g_1%3a1.3.dfsg+really1.3.1-1+deb13u1_amd64.deb ...
+#9 5.554 Unpacking zlib1g:amd64 (1:1.3.dfsg+really1.3.1-1+deb13u1) over (1:1.3.dfsg+really1.3.1-1+b1) ...
+#9 5.601 Setting up zlib1g:amd64 (1:1.3.dfsg+really1.3.1-1+deb13u1) ...
+#9 5.643 Selecting previously unselected package less.
+#9 5.643 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14665 files and directories currently installed.)
+#9 5.650 Preparing to unpack .../00-less_668-1_amd64.deb ...
+#9 5.656 Unpacking less (668-1) ...
+#9 5.696 Selecting previously unselected package libedit2:amd64.
+#9 5.697 Preparing to unpack .../01-libedit2_3.1-20250104-1_amd64.deb ...
+#9 5.701 Unpacking libedit2:amd64 (3.1-20250104-1) ...
+#9 5.737 Selecting previously unselected package libcbor0.10:amd64.
+#9 5.739 Preparing to unpack .../02-libcbor0.10_0.10.2-2_amd64.deb ...
+#9 5.743 Unpacking libcbor0.10:amd64 (0.10.2-2) ...
+#9 5.777 Selecting previously unselected package libfido2-1:amd64.
+#9 5.779 Preparing to unpack .../03-libfido2-1_1.15.0-1+b1_amd64.deb ...
+#9 5.783 Unpacking libfido2-1:amd64 (1.15.0-1+b1) ...
+#9 5.824 Selecting previously unselected package openssh-client.
+#9 5.825 Preparing to unpack .../04-openssh-client_1%3a10.0p1-7+deb13u4_amd64.deb ...
+#9 5.833 Unpacking openssh-client (1:10.0p1-7+deb13u4) ...
+#9 5.912 Selecting previously unselected package libngtcp2-16:amd64.
+#9 5.913 Preparing to unpack .../05-libngtcp2-16_1.11.0-1+deb13u1_amd64.deb ...
+#9 5.918 Unpacking libngtcp2-16:amd64 (1.11.0-1+deb13u1) ...
+#9 5.958 Selecting previously unselected package libngtcp2-crypto-gnutls8:amd64.
+#9 5.959 Preparing to unpack .../06-libngtcp2-crypto-gnutls8_1.11.0-1+deb13u1_amd64.deb ...
+#9 5.963 Unpacking libngtcp2-crypto-gnutls8:amd64 (1.11.0-1+deb13u1) ...
+#9 5.999 Selecting previously unselected package libcurl3t64-gnutls:amd64.
+#9 6.000 Preparing to unpack .../07-libcurl3t64-gnutls_8.14.1-2+deb13u7_amd64.deb ...
+#9 6.005 Unpacking libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u7) ...
+#9 6.046 Selecting previously unselected package liberror-perl.
+#9 6.048 Preparing to unpack .../08-liberror-perl_0.17030-1_all.deb ...
+#9 6.052 Unpacking liberror-perl (0.17030-1) ...
+#9 6.078 Selecting previously unselected package git-man.
+#9 6.079 Preparing to unpack .../09-git-man_1%3a2.47.3-0+deb13u1_all.deb ...
+#9 6.083 Unpacking git-man (1:2.47.3-0+deb13u1) ...
+#9 6.158 Selecting previously unselected package git.
+#9 6.160 Preparing to unpack .../10-git_1%3a2.47.3-0+deb13u1_amd64.deb ...
+#9 6.167 Unpacking git (1:2.47.3-0+deb13u1) ...
+#9 6.453 Selecting previously unselected package libonig-dev.
+#9 6.455 Preparing to unpack .../11-libonig-dev_6.9.9-1+b1_amd64.deb ...
+#9 6.459 Unpacking libonig-dev (6.9.9-1+b1) ...
+#9 6.496 Selecting previously unselected package libpng16-16t64:amd64.
+#9 6.497 Preparing to unpack .../12-libpng16-16t64_1.6.48-1+deb13u6_amd64.deb ...
+#9 6.501 Unpacking libpng16-16t64:amd64 (1.6.48-1+deb13u6) ...
+#9 6.536 Selecting previously unselected package zlib1g-dev:amd64.
+#9 6.537 Preparing to unpack .../13-zlib1g-dev_1%3a1.3.dfsg+really1.3.1-1+deb13u1_amd64.deb ...
+#9 6.541 Unpacking zlib1g-dev:amd64 (1:1.3.dfsg+really1.3.1-1+deb13u1) ...
+#9 6.580 Selecting previously unselected package libpng-dev:amd64.
+#9 6.581 Preparing to unpack .../14-libpng-dev_1.6.48-1+deb13u6_amd64.deb ...
+#9 6.586 Unpacking libpng-dev:amd64 (1.6.48-1+deb13u6) ...
+#9 6.624 Selecting previously unselected package libpng-tools.
+#9 6.625 Preparing to unpack .../15-libpng-tools_1.6.48-1+deb13u6_amd64.deb ...
+#9 6.630 Unpacking libpng-tools (1.6.48-1+deb13u6) ...
+#9 6.662 Selecting previously unselected package libxau6:amd64.
+#9 6.664 Preparing to unpack .../16-libxau6_1%3a1.0.11-1_amd64.deb ...
+#9 6.668 Unpacking libxau6:amd64 (1:1.0.11-1) ...
+#9 6.699 Selecting previously unselected package libxdmcp6:amd64.
+#9 6.700 Preparing to unpack .../17-libxdmcp6_1%3a1.1.5-1_amd64.deb ...
+#9 6.705 Unpacking libxdmcp6:amd64 (1:1.1.5-1) ...
+#9 6.739 Selecting previously unselected package libxcb1:amd64.
+#9 6.741 Preparing to unpack .../18-libxcb1_1.17.0-2+b1_amd64.deb ...
+#9 6.745 Unpacking libxcb1:amd64 (1.17.0-2+b1) ...
+#9 6.774 Selecting previously unselected package libx11-data.
+#9 6.775 Preparing to unpack .../19-libx11-data_2%3a1.8.12-1_all.deb ...
+#9 6.780 Unpacking libx11-data (2:1.8.12-1) ...
+#9 6.833 Selecting previously unselected package libx11-6:amd64.
+#9 6.834 Preparing to unpack .../20-libx11-6_2%3a1.8.12-1_amd64.deb ...
+#9 6.839 Unpacking libx11-6:amd64 (2:1.8.12-1) ...
+#9 6.899 Selecting previously unselected package libxext6:amd64.
+#9 6.901 Preparing to unpack .../21-libxext6_2%3a1.3.4-1+b3_amd64.deb ...
+#9 6.905 Unpacking libxext6:amd64 (2:1.3.4-1+b3) ...
+#9 6.934 Selecting previously unselected package libxml2-dev:amd64.
+#9 6.935 Preparing to unpack .../22-libxml2-dev_2.12.7+dfsg+really2.9.14-2.1+deb13u3_amd64.deb ...
+#9 6.939 Unpacking libxml2-dev:amd64 (2.12.7+dfsg+really2.9.14-2.1+deb13u3) ...
+#9 7.009 Selecting previously unselected package libxmuu1:amd64.
+#9 7.011 Preparing to unpack .../23-libxmuu1_2%3a1.1.3-3+b4_amd64.deb ...
+#9 7.015 Unpacking libxmuu1:amd64 (2:1.1.3-3+b4) ...
+#9 7.050 Selecting previously unselected package libzip5:amd64.
+#9 7.051 Preparing to unpack .../24-libzip5_1.11.3-2_amd64.deb ...
+#9 7.056 Unpacking libzip5:amd64 (1.11.3-2) ...
+#9 7.086 Selecting previously unselected package zipcmp.
+#9 7.088 Preparing to unpack .../25-zipcmp_1.11.3-2_amd64.deb ...
+#9 7.092 Unpacking zipcmp (1.11.3-2) ...
+#9 7.121 Selecting previously unselected package zipmerge.
+#9 7.122 Preparing to unpack .../26-zipmerge_1.11.3-2_amd64.deb ...
+#9 7.127 Unpacking zipmerge (1.11.3-2) ...
+#9 7.152 Selecting previously unselected package ziptool.
+#9 7.154 Preparing to unpack .../27-ziptool_1.11.3-2_amd64.deb ...
+#9 7.158 Unpacking ziptool (1.11.3-2) ...
+#9 7.184 Selecting previously unselected package libzip-dev:amd64.
+#9 7.185 Preparing to unpack .../28-libzip-dev_1.11.3-2_amd64.deb ...
+#9 7.189 Unpacking libzip-dev:amd64 (1.11.3-2) ...
+#9 7.219 Selecting previously unselected package unzip.
+#9 7.221 Preparing to unpack .../29-unzip_6.0-29+deb13u1_amd64.deb ...
+#9 7.225 Unpacking unzip (6.0-29+deb13u1) ...
+#9 7.256 Selecting previously unselected package xauth.
+#9 7.258 Preparing to unpack .../30-xauth_1%3a1.1.2-1.1_amd64.deb ...
+#9 7.262 Unpacking xauth (1:1.1.2-1.1) ...
+#9 7.296 Setting up libexpat1:amd64 (2.9.0-1~deb13u1) ...
+#9 7.308 Setting up libxau6:amd64 (1:1.0.11-1) ...
+#9 7.320 Setting up libxdmcp6:amd64 (1:1.1.5-1) ...
+#9 7.332 Setting up libxcb1:amd64 (1.17.0-2+b1) ...
+#9 7.344 Setting up libzip5:amd64 (1.11.3-2) ...
+#9 7.356 Setting up libonig-dev (6.9.9-1+b1) ...
+#9 7.369 Setting up libcbor0.10:amd64 (0.10.2-2) ...
+#9 7.381 Setting up unzip (6.0-29+deb13u1) ...
+#9 7.393 Setting up libedit2:amd64 (3.1-20250104-1) ...
+#9 7.405 Setting up less (668-1) ...
+#9 7.424 Setting up zipmerge (1.11.3-2) ...
+#9 7.437 Setting up liberror-perl (0.17030-1) ...
+#9 7.449 Setting up libxml2-dev:amd64 (2.12.7+dfsg+really2.9.14-2.1+deb13u3) ...
+#9 7.462 Setting up libx11-data (2:1.8.12-1) ...
+#9 7.475 Setting up libpng16-16t64:amd64 (1.6.48-1+deb13u6) ...
+#9 7.488 Setting up zlib1g-dev:amd64 (1:1.3.dfsg+really1.3.1-1+deb13u1) ...
+#9 7.502 Setting up zipcmp (1.11.3-2) ...
+#9 7.516 Setting up git-man (1:2.47.3-0+deb13u1) ...
+#9 7.529 Setting up libx11-6:amd64 (2:1.8.12-1) ...
+#9 7.543 Setting up libngtcp2-16:amd64 (1.11.0-1+deb13u1) ...
+#9 7.557 Setting up libfido2-1:amd64 (1.15.0-1+b1) ...
+#9 7.570 Setting up ziptool (1.11.3-2) ...
+#9 7.584 Setting up libxmuu1:amd64 (2:1.1.3-3+b4) ...
+#9 7.597 Setting up libngtcp2-crypto-gnutls8:amd64 (1.11.0-1+deb13u1) ...
+#9 7.611 Setting up libzip-dev:amd64 (1.11.3-2) ...
+#9 7.624 Setting up libpng-tools (1.6.48-1+deb13u6) ...
+#9 7.637 Setting up openssh-client (1:10.0p1-7+deb13u4) ...
+#9 7.852 Setting up libpng-dev:amd64 (1.6.48-1+deb13u6) ...
+#9 7.866 Setting up libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u7) ...
+#9 7.880 Setting up libxext6:amd64 (2:1.3.4-1+b3) ...
+#9 7.895 Setting up git (1:2.47.3-0+deb13u1) ...
+#9 7.915 Setting up xauth (1:1.1.2-1.1) ...
+#9 7.927 Processing triggers for libc-bin (2.41-12+deb13u4) ...
+#9 9.262 Configuring for:
+#9 9.262 PHP Api Version:         20230831
+#9 9.262 Zend Module Api No:      20230831
+#9 9.262 Zend Extension Api No:   420230831
+#9 9.833 checking for grep that handles long lines and -e... /usr/bin/grep
+#9 9.834 checking for egrep... /usr/bin/grep -E
+#9 9.835 checking for a sed that does not truncate output... /usr/bin/sed
+#9 9.857 checking for pkg-config... /usr/bin/pkg-config
+#9 9.858 checking pkg-config is at least version 0.9.0... yes
+#9 9.859 checking for cc... cc
+#9 9.881 checking whether the C compiler works... yes
+#9 9.912 checking for C compiler default output file name... a.out
+#9 9.913 checking for suffix of executables... 
+#9 9.943 checking whether we are cross compiling... no
+#9 9.981 checking for suffix of object files... o
+#9 9.998 checking whether the compiler supports GNU C... yes
+#9 10.02 checking whether cc accepts -g... yes
+#9 10.03 checking for cc option to enable C11 features... none needed
+#9 10.07 checking how to run the C preprocessor... cc -E
+#9 10.11 checking for egrep -e... (cached) /usr/bin/grep -E
+#9 10.11 checking for icc... no
+#9 10.12 checking for suncc... no
+#9 10.13 checking for system library directory... lib
+#9 10.13 checking if compiler supports -Wl,-rpath,... yes
+#9 10.17 checking build system type... x86_64-pc-linux-gnu
+#9 10.17 checking host system type... x86_64-pc-linux-gnu
+#9 10.17 checking target system type... x86_64-pc-linux-gnu
+#9 10.20 checking for PHP prefix... /usr/local
+#9 10.20 checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+#9 10.20 checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20230831
+#9 10.20 checking for PHP installed headers prefix... /usr/local/include/php
+#9 10.20 checking if debug is enabled... no
+#9 10.21 checking if zts is enabled... no
+#9 10.22 checking for gawk... no
+#9 10.22 checking for nawk... nawk
+#9 10.22 checking if nawk is broken... no
+#9 10.22 checking whether to enable PDO support... yes, shared
+#9 10.24 checking for a sed that does not truncate output... /usr/bin/sed
+#9 10.24 checking for ld used by cc... /usr/bin/ld
+#9 10.24 checking if the linker (/usr/bin/ld) is GNU ld... yes
+#9 10.24 checking for /usr/bin/ld option to reload object files... -r
+#9 10.24 checking for BSD-compatible nm... /usr/bin/nm -B
+#9 10.25 checking whether ln -s works... yes
+#9 10.25 checking how to recognize dependent libraries... pass_all
+#9 10.26 checking for stdio.h... yes
+#9 10.27 checking for stdlib.h... yes
+#9 10.29 checking for string.h... yes
+#9 10.31 checking for inttypes.h... yes
+#9 10.33 checking for stdint.h... yes
+#9 10.35 checking for strings.h... yes
+#9 10.37 checking for sys/stat.h... yes
+#9 10.39 checking for sys/types.h... yes
+#9 10.41 checking for unistd.h... yes
+#9 10.44 checking for dlfcn.h... yes
+#9 10.46 checking the maximum length of command line arguments... 1572864
+#9 10.46 checking command to parse /usr/bin/nm -B output from cc object... ok
+#9 10.52 checking for objdir... .libs
+#9 10.52 checking for ar... ar
+#9 10.52 checking for ranlib... ranlib
+#9 10.52 checking for strip... strip
+#9 10.56 checking if cc supports -fno-rtti -fno-exceptions... no
+#9 10.58 checking for cc option to produce PIC... -fPIC
+#9 10.58 checking if cc PIC flag -fPIC works... yes
+#9 10.59 checking if cc static flag -static works... yes
+#9 10.65 checking if cc supports -c -o file.o... yes
+#9 10.67 checking whether the cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+#9 10.68 checking whether -lc should be explicitly linked in... no
+#9 10.70 checking dynamic linker characteristics... GNU/Linux ld.so
+#9 10.71 checking how to hardcode library paths into programs... immediate
+#9 10.72 checking whether stripping libraries is possible... yes
+#9 10.72 checking if libtool supports shared libraries... yes
+#9 10.72 checking whether to build shared libraries... yes
+#9 10.72 checking whether to build static libraries... no
+#9 10.83 
+#9 10.83 creating libtool
+#9 10.84 appending configuration tag "CXX" to libtool
+#9 10.89 configure: patching config.h.in
+#9 10.89 configure: creating ./config.status
+#9 10.93 config.status: creating config.h
+#9 10.97 /bin/bash /usr/src/php/ext/pdo/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE    -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo.c -o pdo.lo  -MMD -MF pdo.dep -MT pdo.lo
+#9 11.06 mkdir .libs
+#9 11.06  cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo.c -MMD -MF pdo.dep -MT pdo.lo  -fPIC -DPIC -o .libs/pdo.o
+#9 11.27 /bin/bash /usr/src/php/ext/pdo/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE    -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo_dbh.c -o pdo_dbh.lo  -MMD -MF pdo_dbh.dep -MT pdo_dbh.lo
+#9 11.35  cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo_dbh.c -MMD -MF pdo_dbh.dep -MT pdo_dbh.lo  -fPIC -DPIC -o .libs/pdo_dbh.o
+#9 12.16 /bin/bash /usr/src/php/ext/pdo/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE    -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo_stmt.c -o pdo_stmt.lo  -MMD -MF pdo_stmt.dep -MT pdo_stmt.lo
+#9 12.24  cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo_stmt.c -MMD -MF pdo_stmt.dep -MT pdo_stmt.lo  -fPIC -DPIC -o .libs/pdo_stmt.o
+#9 13.11 /bin/bash /usr/src/php/ext/pdo/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE    -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo_sql_parser.c -o pdo_sql_parser.lo  -MMD -MF pdo_sql_parser.dep -MT pdo_sql_parser.lo
+#9 13.19  cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo_sql_parser.c -MMD -MF pdo_sql_parser.dep -MT pdo_sql_parser.lo  -fPIC -DPIC -o .libs/pdo_sql_parser.o
+#9 13.46 /bin/bash /usr/src/php/ext/pdo/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE    -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo_sqlstate.c -o pdo_sqlstate.lo  -MMD -MF pdo_sqlstate.dep -MT pdo_sqlstate.lo
+#9 13.54  cc -I. -I/usr/src/php/ext/pdo -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo/pdo_sqlstate.c -MMD -MF pdo_sqlstate.dep -MT pdo_sqlstate.lo  -fPIC -DPIC -o .libs/pdo_sqlstate.o
+#9 13.67 /bin/bash /usr/src/php/ext/pdo/libtool --tag=CC --mode=link cc -shared -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE  -Wl,-O1 -pie  -o pdo.la -export-dynamic -avoid-version -prefer-pic -module -rpath /usr/src/php/ext/pdo/modules  pdo.lo pdo_dbh.lo pdo_stmt.lo pdo_sql_parser.lo pdo_sqlstate.lo 
+#9 13.75 cc -shared  .libs/pdo.o .libs/pdo_dbh.o .libs/pdo_stmt.o .libs/pdo_sql_parser.o .libs/pdo_sqlstate.o   -Wl,-O1 -Wl,-soname -Wl,pdo.so -o .libs/pdo.so
+#9 13.76 creating pdo.la
+#9 13.77 (cd .libs && rm -f pdo.la && ln -s ../pdo.la pdo.la)
+#9 13.77 /bin/bash /usr/src/php/ext/pdo/libtool --tag=CC --mode=install cp ./pdo.la /usr/src/php/ext/pdo/modules
+#9 13.79 cp ./.libs/pdo.so /usr/src/php/ext/pdo/modules/pdo.so
+#9 13.80 cp ./.libs/pdo.lai /usr/src/php/ext/pdo/modules/pdo.la
+#9 13.81 PATH="$PATH:/sbin" ldconfig -n /usr/src/php/ext/pdo/modules
+#9 13.81 ----------------------------------------------------------------------
+#9 13.81 Libraries have been installed in:
+#9 13.81    /usr/src/php/ext/pdo/modules
+#9 13.81 
+#9 13.81 If you ever happen to want to link against installed libraries
+#9 13.81 in a given directory, LIBDIR, you must either use libtool, and
+#9 13.81 specify the full pathname of the library, or use the `-LLIBDIR'
+#9 13.81 flag during linking and do at least one of the following:
+#9 13.81    - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+#9 13.81      during execution
+#9 13.81    - add LIBDIR to the `LD_RUN_PATH' environment variable
+#9 13.81      during linking
+#9 13.81    - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+#9 13.81    - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+#9 13.81 
+#9 13.81 See any operating system documentation about shared libraries for
+#9 13.81 more information, such as the ld(1) and ld.so(8) manual pages.
+#9 13.81 ----------------------------------------------------------------------
+#9 13.82 
+#9 13.82 Build complete.
+#9 13.82 Don't forget to run 'make test'.
+#9 13.82 
+#9 13.83 + strip --strip-all modules/pdo.so
+#9 13.85 Installing shared extensions:     /usr/local/lib/php/extensions/no-debug-non-zts-20230831/
+#9 13.93 Installing header files:          /usr/local/include/php/
+#9 14.01 Installing PDO headers:           /usr/local/include/php/ext/pdo/
+#9 14.13 
+#9 14.13 warning: pdo (pdo) is already loaded!
+#9 14.13 
+#9 14.13 find . -name \*.gcno -o -name \*.gcda | xargs rm -f
+#9 14.13 find . -name \*.lo -o -name \*.o -o -name \*.dep | xargs rm -f
+#9 14.14 find . -name \*.la -o -name \*.a | xargs rm -f
+#9 14.14 find . -name \*.so | xargs rm -f
+#9 14.14 find . -name .libs -a -type d|xargs rm -rf
+#9 14.15 rm -f libphp.la      modules/* libs/*
+#9 14.15 rm -f ext/opcache/jit/zend_jit_x86.c
+#9 14.15 rm -f ext/opcache/jit/zend_jit_arm64.c
+#9 14.15 rm -f ext/opcache/minilua
+#9 14.17 Configuring for:
+#9 14.17 PHP Api Version:         20230831
+#9 14.17 Zend Module Api No:      20230831
+#9 14.17 Zend Extension Api No:   420230831
+#9 14.75 checking for grep that handles long lines and -e... /usr/bin/grep
+#9 14.75 checking for egrep... /usr/bin/grep -E
+#9 14.75 checking for a sed that does not truncate output... /usr/bin/sed
+#9 14.78 checking for pkg-config... /usr/bin/pkg-config
+#9 14.78 checking pkg-config is at least version 0.9.0... yes
+#9 14.78 checking for cc... cc
+#9 14.80 checking whether the C compiler works... yes
+#9 14.83 checking for C compiler default output file name... a.out
+#9 14.83 checking for suffix of executables... 
+#9 14.86 checking whether we are cross compiling... no
+#9 14.90 checking for suffix of object files... o
+#9 14.91 checking whether the compiler supports GNU C... yes
+#9 14.93 checking whether cc accepts -g... yes
+#9 14.95 checking for cc option to enable C11 features... none needed
+#9 14.99 checking how to run the C preprocessor... cc -E
+#9 15.03 checking for egrep -e... (cached) /usr/bin/grep -E
+#9 15.03 checking for icc... no
+#9 15.04 checking for suncc... no
+#9 15.06 checking for system library directory... lib
+#9 15.06 checking if compiler supports -Wl,-rpath,... yes
+#9 15.11 checking build system type... x86_64-pc-linux-gnu
+#9 15.12 checking host system type... x86_64-pc-linux-gnu
+#9 15.12 checking target system type... x86_64-pc-linux-gnu
+#9 15.16 checking for PHP prefix... /usr/local
+#9 15.16 checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+#9 15.16 checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20230831
+#9 15.16 checking for PHP installed headers prefix... /usr/local/include/php
+#9 15.16 checking if debug is enabled... no
+#9 15.18 checking if zts is enabled... no
+#9 15.20 checking for gawk... no
+#9 15.20 checking for nawk... nawk
+#9 15.20 checking if nawk is broken... no
+#9 15.20 checking for MySQL support for PDO... yes, shared
+#9 15.20 checking for the location of libz... no
+#9 15.21 checking for MySQL UNIX socket location... 
+#9 15.21 checking for PDO includes... /usr/local/include/php/ext
+#9 15.21 checking for a sed that does not truncate output... /usr/bin/sed
+#9 15.21 checking for ld used by cc... /usr/bin/ld
+#9 15.22 checking if the linker (/usr/bin/ld) is GNU ld... yes
+#9 15.23 checking for /usr/bin/ld option to reload object files... -r
+#9 15.23 checking for BSD-compatible nm... /usr/bin/nm -B
+#9 15.23 checking whether ln -s works... yes
+#9 15.23 checking how to recognize dependent libraries... pass_all
+#9 15.25 checking for stdio.h... yes
+#9 15.27 checking for stdlib.h... yes
+#9 15.29 checking for string.h... yes
+#9 15.31 checking for inttypes.h... yes
+#9 15.33 checking for stdint.h... yes
+#9 15.35 checking for strings.h... yes
+#9 15.37 checking for sys/stat.h... yes
+#9 15.40 checking for sys/types.h... yes
+#9 15.43 checking for unistd.h... yes
+#9 15.46 checking for dlfcn.h... yes
+#9 15.49 checking the maximum length of command line arguments... 1572864
+#9 15.50 checking command to parse /usr/bin/nm -B output from cc object... ok
+#9 15.57 checking for objdir... .libs
+#9 15.57 checking for ar... ar
+#9 15.57 checking for ranlib... ranlib
+#9 15.57 checking for strip... strip
+#9 15.69 checking if cc supports -fno-rtti -fno-exceptions... no
+#9 15.71 checking for cc option to produce PIC... -fPIC
+#9 15.71 checking if cc PIC flag -fPIC works... yes
+#9 15.73 checking if cc static flag -static works... yes
+#9 15.78 checking if cc supports -c -o file.o... yes
+#9 15.80 checking whether the cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+#9 15.81 checking whether -lc should be explicitly linked in... no
+#9 15.84 checking dynamic linker characteristics... GNU/Linux ld.so
+#9 15.85 checking how to hardcode library paths into programs... immediate
+#9 15.85 checking whether stripping libraries is possible... yes
+#9 15.85 checking if libtool supports shared libraries... yes
+#9 15.85 checking whether to build shared libraries... yes
+#9 15.85 checking whether to build static libraries... no
+#9 15.96 
+#9 15.96 creating libtool
+#9 15.98 appending configuration tag "CXX" to libtool
+#9 16.03 configure: patching config.h.in
+#9 16.03 configure: creating ./config.status
+#9 16.07 config.status: creating config.h
+#9 16.10 /bin/bash /usr/src/php/ext/pdo_mysql/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/pdo_mysql -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE   -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo_mysql/pdo_mysql.c -o pdo_mysql.lo  -MMD -MF pdo_mysql.dep -MT pdo_mysql.lo
+#9 16.18 mkdir .libs
+#9 16.18  cc -I. -I/usr/src/php/ext/pdo_mysql -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo_mysql/pdo_mysql.c -MMD -MF pdo_mysql.dep -MT pdo_mysql.lo  -fPIC -DPIC -o .libs/pdo_mysql.o
+#9 16.31 /bin/bash /usr/src/php/ext/pdo_mysql/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/pdo_mysql -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE   -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo_mysql/mysql_driver.c -o mysql_driver.lo  -MMD -MF mysql_driver.dep -MT mysql_driver.lo
+#9 16.40  cc -I. -I/usr/src/php/ext/pdo_mysql -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo_mysql/mysql_driver.c -MMD -MF mysql_driver.dep -MT mysql_driver.lo  -fPIC -DPIC -o .libs/mysql_driver.o
+#9 16.78 /bin/bash /usr/src/php/ext/pdo_mysql/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/pdo_mysql -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE   -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo_mysql/mysql_statement.c -o mysql_statement.lo  -MMD -MF mysql_statement.dep -MT mysql_statement.lo
+#9 16.86  cc -I. -I/usr/src/php/ext/pdo_mysql -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/pdo_mysql/mysql_statement.c -MMD -MF mysql_statement.dep -MT mysql_statement.lo  -fPIC -DPIC -o .libs/mysql_statement.o
+#9 17.08 /bin/bash /usr/src/php/ext/pdo_mysql/libtool --tag=CC --mode=link cc -shared -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE  -Wl,-O1 -pie  -o pdo_mysql.la -export-dynamic -avoid-version -prefer-pic -module -rpath /usr/src/php/ext/pdo_mysql/modules  pdo_mysql.lo mysql_driver.lo mysql_statement.lo 
+#9 17.16 cc -shared  .libs/pdo_mysql.o .libs/mysql_driver.o .libs/mysql_statement.o   -Wl,-O1 -Wl,-soname -Wl,pdo_mysql.so -o .libs/pdo_mysql.so
+#9 17.18 creating pdo_mysql.la
+#9 17.19 (cd .libs && rm -f pdo_mysql.la && ln -s ../pdo_mysql.la pdo_mysql.la)
+#9 17.19 /bin/bash /usr/src/php/ext/pdo_mysql/libtool --tag=CC --mode=install cp ./pdo_mysql.la /usr/src/php/ext/pdo_mysql/modules
+#9 17.22 cp ./.libs/pdo_mysql.so /usr/src/php/ext/pdo_mysql/modules/pdo_mysql.so
+#9 17.22 cp ./.libs/pdo_mysql.lai /usr/src/php/ext/pdo_mysql/modules/pdo_mysql.la
+#9 17.24 PATH="$PATH:/sbin" ldconfig -n /usr/src/php/ext/pdo_mysql/modules
+#9 17.24 ----------------------------------------------------------------------
+#9 17.24 Libraries have been installed in:
+#9 17.24    /usr/src/php/ext/pdo_mysql/modules
+#9 17.24 
+#9 17.24 If you ever happen to want to link against installed libraries
+#9 17.24 in a given directory, LIBDIR, you must either use libtool, and
+#9 17.24 specify the full pathname of the library, or use the `-LLIBDIR'
+#9 17.24 flag during linking and do at least one of the following:
+#9 17.24    - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+#9 17.24      during execution
+#9 17.24    - add LIBDIR to the `LD_RUN_PATH' environment variable
+#9 17.24      during linking
+#9 17.24    - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+#9 17.24    - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+#9 17.24 
+#9 17.24 See any operating system documentation about shared libraries for
+#9 17.24 more information, such as the ld(1) and ld.so(8) manual pages.
+#9 17.24 ----------------------------------------------------------------------
+#9 17.25 
+#9 17.25 Build complete.
+#9 17.25 Don't forget to run 'make test'.
+#9 17.25 
+#9 17.27 + strip --strip-all modules/pdo_mysql.so
+#9 17.29 Installing shared extensions:     /usr/local/lib/php/extensions/no-debug-non-zts-20230831/
+#9 17.35 find . -name \*.gcno -o -name \*.gcda | xargs rm -f
+#9 17.36 find . -name \*.lo -o -name \*.o -o -name \*.dep | xargs rm -f
+#9 17.36 find . -name \*.la -o -name \*.a | xargs rm -f
+#9 17.36 find . -name \*.so | xargs rm -f
+#9 17.37 find . -name .libs -a -type d|xargs rm -rf
+#9 17.37 rm -f libphp.la      modules/* libs/*
+#9 17.37 rm -f ext/opcache/jit/zend_jit_x86.c
+#9 17.37 rm -f ext/opcache/jit/zend_jit_arm64.c
+#9 17.38 rm -f ext/opcache/minilua
+#9 17.40 Configuring for:
+#9 17.40 PHP Api Version:         20230831
+#9 17.40 Zend Module Api No:      20230831
+#9 17.40 Zend Extension Api No:   420230831
+#9 18.04 checking for grep that handles long lines and -e... /usr/bin/grep
+#9 18.04 checking for egrep... /usr/bin/grep -E
+#9 18.04 checking for a sed that does not truncate output... /usr/bin/sed
+#9 18.06 checking for pkg-config... /usr/bin/pkg-config
+#9 18.06 checking pkg-config is at least version 0.9.0... yes
+#9 18.07 checking for cc... cc
+#9 18.09 checking whether the C compiler works... yes
+#9 18.12 checking for C compiler default output file name... a.out
+#9 18.12 checking for suffix of executables... 
+#9 18.15 checking whether we are cross compiling... no
+#9 18.19 checking for suffix of object files... o
+#9 18.21 checking whether the compiler supports GNU C... yes
+#9 18.23 checking whether cc accepts -g... yes
+#9 18.24 checking for cc option to enable C11 features... none needed
+#9 18.28 checking how to run the C preprocessor... cc -E
+#9 18.33 checking for egrep -e... (cached) /usr/bin/grep -E
+#9 18.33 checking for icc... no
+#9 18.33 checking for suncc... no
+#9 18.34 checking for system library directory... lib
+#9 18.34 checking if compiler supports -Wl,-rpath,... yes
+#9 18.38 checking build system type... x86_64-pc-linux-gnu
+#9 18.38 checking host system type... x86_64-pc-linux-gnu
+#9 18.38 checking target system type... x86_64-pc-linux-gnu
+#9 18.41 checking for PHP prefix... /usr/local
+#9 18.41 checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+#9 18.41 checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20230831
+#9 18.41 checking for PHP installed headers prefix... /usr/local/include/php
+#9 18.41 checking if debug is enabled... no
+#9 18.42 checking if zts is enabled... no
+#9 18.44 checking for gawk... no
+#9 18.44 checking for nawk... nawk
+#9 18.44 checking if nawk is broken... no
+#9 18.44 checking for zip archive read/write support... yes, shared
+#9 18.44 checking for libzip >= 0.11 libzip != 1.3.1 libzip != 1.7.0... yes
+#9 18.45 checking for zip_file_set_mtime in -lzip... yes
+#9 18.50 checking for zip_file_set_encryption in -lzip... yes
+#9 18.55 checking for zip_libzip_version in -lzip... yes
+#9 18.61 checking for zip_register_progress_callback_with_state in -lzip... yes
+#9 18.66 checking for zip_register_cancel_callback_with_state in -lzip... yes
+#9 18.71 checking for zip_compression_method_supported in -lzip... yes
+#9 18.77 checking for a sed that does not truncate output... /usr/bin/sed
+#9 18.77 checking for ld used by cc... /usr/bin/ld
+#9 18.77 checking if the linker (/usr/bin/ld) is GNU ld... yes
+#9 18.78 checking for /usr/bin/ld option to reload object files... -r
+#9 18.78 checking for BSD-compatible nm... /usr/bin/nm -B
+#9 18.78 checking whether ln -s works... yes
+#9 18.78 checking how to recognize dependent libraries... pass_all
+#9 18.79 checking for stdio.h... yes
+#9 18.81 checking for stdlib.h... yes
+#9 18.83 checking for string.h... yes
+#9 18.84 checking for inttypes.h... yes
+#9 18.86 checking for stdint.h... yes
+#9 18.89 checking for strings.h... yes
+#9 18.91 checking for sys/stat.h... yes
+#9 18.93 checking for sys/types.h... yes
+#9 18.95 checking for unistd.h... yes
+#9 18.97 checking for dlfcn.h... yes
+#9 19.00 checking the maximum length of command line arguments... 1572864
+#9 19.00 checking command to parse /usr/bin/nm -B output from cc object... ok
+#9 19.05 checking for objdir... .libs
+#9 19.06 checking for ar... ar
+#9 19.06 checking for ranlib... ranlib
+#9 19.06 checking for strip... strip
+#9 19.10 checking if cc supports -fno-rtti -fno-exceptions... no
+#9 19.12 checking for cc option to produce PIC... -fPIC
+#9 19.12 checking if cc PIC flag -fPIC works... yes
+#9 19.14 checking if cc static flag -static works... yes
+#9 19.19 checking if cc supports -c -o file.o... yes
+#9 19.22 checking whether the cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+#9 19.23 checking whether -lc should be explicitly linked in... no
+#9 19.25 checking dynamic linker characteristics... GNU/Linux ld.so
+#9 19.26 checking how to hardcode library paths into programs... immediate
+#9 19.26 checking whether stripping libraries is possible... yes
+#9 19.26 checking if libtool supports shared libraries... yes
+#9 19.26 checking whether to build shared libraries... yes
+#9 19.26 checking whether to build static libraries... no
+#9 19.37 
+#9 19.37 creating libtool
+#9 19.39 appending configuration tag "CXX" to libtool
+#9 19.44 configure: patching config.h.in
+#9 19.44 configure: creating ./config.status
+#9 19.48 config.status: creating config.h
+#9 19.51 /bin/bash /usr/src/php/ext/zip/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/zip -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE    -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/zip/php_zip.c -o php_zip.lo  -MMD -MF php_zip.dep -MT php_zip.lo
+#9 19.58 mkdir .libs
+#9 19.59  cc -I. -I/usr/src/php/ext/zip -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/zip/php_zip.c -MMD -MF php_zip.dep -MT php_zip.lo  -fPIC -DPIC -o .libs/php_zip.o
+#9 21.01 /bin/bash /usr/src/php/ext/zip/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/zip -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE    -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/zip/zip_stream.c -o zip_stream.lo  -MMD -MF zip_stream.dep -MT zip_stream.lo
+#9 21.08  cc -I. -I/usr/src/php/ext/zip -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/zip/zip_stream.c -MMD -MF zip_stream.dep -MT zip_stream.lo  -fPIC -DPIC -o .libs/zip_stream.o
+#9 21.27 /bin/bash /usr/src/php/ext/zip/libtool --tag=CC --mode=link cc -shared -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE  -Wl,-O1 -pie  -o zip.la -export-dynamic -avoid-version -prefer-pic -module -rpath /usr/src/php/ext/zip/modules  php_zip.lo zip_stream.lo -lzip
+#9 21.35 cc -shared  .libs/php_zip.o .libs/zip_stream.o  -lzip  -Wl,-O1 -Wl,-soname -Wl,zip.so -o .libs/zip.so
+#9 21.37 creating zip.la
+#9 21.37 (cd .libs && rm -f zip.la && ln -s ../zip.la zip.la)
+#9 21.37 /bin/bash /usr/src/php/ext/zip/libtool --tag=CC --mode=install cp ./zip.la /usr/src/php/ext/zip/modules
+#9 21.40 cp ./.libs/zip.so /usr/src/php/ext/zip/modules/zip.so
+#9 21.40 cp ./.libs/zip.lai /usr/src/php/ext/zip/modules/zip.la
+#9 21.42 PATH="$PATH:/sbin" ldconfig -n /usr/src/php/ext/zip/modules
+#9 21.42 ----------------------------------------------------------------------
+#9 21.42 Libraries have been installed in:
+#9 21.42    /usr/src/php/ext/zip/modules
+#9 21.42 
+#9 21.42 If you ever happen to want to link against installed libraries
+#9 21.42 in a given directory, LIBDIR, you must either use libtool, and
+#9 21.42 specify the full pathname of the library, or use the `-LLIBDIR'
+#9 21.42 flag during linking and do at least one of the following:
+#9 21.42    - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+#9 21.42      during execution
+#9 21.42    - add LIBDIR to the `LD_RUN_PATH' environment variable
+#9 21.42      during linking
+#9 21.42    - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+#9 21.42    - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+#9 21.42 
+#9 21.42 See any operating system documentation about shared libraries for
+#9 21.42 more information, such as the ld(1) and ld.so(8) manual pages.
+#9 21.42 ----------------------------------------------------------------------
+#9 21.42 
+#9 21.42 Build complete.
+#9 21.42 Don't forget to run 'make test'.
+#9 21.42 
+#9 21.44 + strip --strip-all modules/zip.so
+#9 21.48 Installing shared extensions:     /usr/local/lib/php/extensions/no-debug-non-zts-20230831/
+#9 21.57 find . -name \*.gcno -o -name \*.gcda | xargs rm -f
+#9 21.57 find . -name \*.lo -o -name \*.o -o -name \*.dep | xargs rm -f
+#9 21.57 find . -name \*.la -o -name \*.a | xargs rm -f
+#9 21.57 find . -name \*.so | xargs rm -f
+#9 21.58 find . -name .libs -a -type d|xargs rm -rf
+#9 21.58 rm -f libphp.la      modules/* libs/*
+#9 21.58 rm -f ext/opcache/jit/zend_jit_x86.c
+#9 21.58 rm -f ext/opcache/jit/zend_jit_arm64.c
+#9 21.58 rm -f ext/opcache/minilua
+#9 21.60 Configuring for:
+#9 21.60 PHP Api Version:         20230831
+#9 21.60 Zend Module Api No:      20230831
+#9 21.60 Zend Extension Api No:   420230831
+#9 22.23 checking for grep that handles long lines and -e... /usr/bin/grep
+#9 22.23 checking for egrep... /usr/bin/grep -E
+#9 22.23 checking for a sed that does not truncate output... /usr/bin/sed
+#9 22.26 checking for pkg-config... /usr/bin/pkg-config
+#9 22.26 checking pkg-config is at least version 0.9.0... yes
+#9 22.26 checking for cc... cc
+#9 22.28 checking whether the C compiler works... yes
+#9 22.31 checking for C compiler default output file name... a.out
+#9 22.31 checking for suffix of executables... 
+#9 22.34 checking whether we are cross compiling... no
+#9 22.38 checking for suffix of object files... o
+#9 22.40 checking whether the compiler supports GNU C... yes
+#9 22.42 checking whether cc accepts -g... yes
+#9 22.43 checking for cc option to enable C11 features... none needed
+#9 22.47 checking how to run the C preprocessor... cc -E
+#9 22.52 checking for egrep -e... (cached) /usr/bin/grep -E
+#9 22.52 checking for icc... no
+#9 22.53 checking for suncc... no
+#9 22.53 checking for system library directory... lib
+#9 22.53 checking if compiler supports -Wl,-rpath,... yes
+#9 22.57 checking build system type... x86_64-pc-linux-gnu
+#9 22.57 checking host system type... x86_64-pc-linux-gnu
+#9 22.58 checking target system type... x86_64-pc-linux-gnu
+#9 22.60 checking for PHP prefix... /usr/local
+#9 22.60 checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+#9 22.60 checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20230831
+#9 22.60 checking for PHP installed headers prefix... /usr/local/include/php
+#9 22.60 checking if debug is enabled... no
+#9 22.62 checking if zts is enabled... no
+#9 22.63 checking for gawk... no
+#9 22.63 checking for nawk... nawk
+#9 22.63 checking if nawk is broken... no
+#9 22.63 checking whether to enable multibyte string support... yes, shared
+#9 22.63 checking whether to enable multibyte regex support (requires oniguruma)... yes
+#9 22.63 checking for oniguruma... yes
+#9 22.64 checking if oniguruma has an invalid entry for KOI8 encoding... yes
+#9 22.84 checking for a sed that does not truncate output... /usr/bin/sed
+#9 22.84 checking for ld used by cc... /usr/bin/ld
+#9 22.85 checking if the linker (/usr/bin/ld) is GNU ld... yes
+#9 22.85 checking for /usr/bin/ld option to reload object files... -r
+#9 22.85 checking for BSD-compatible nm... /usr/bin/nm -B
+#9 22.85 checking whether ln -s works... yes
+#9 22.85 checking how to recognize dependent libraries... pass_all
+#9 22.86 checking for stdio.h... yes
+#9 22.88 checking for stdlib.h... yes
+#9 22.90 checking for string.h... yes
+#9 22.92 checking for inttypes.h... yes
+#9 22.94 checking for stdint.h... yes
+#9 22.96 checking for strings.h... yes
+#9 22.98 checking for sys/stat.h... yes
+#9 23.00 checking for sys/types.h... yes
+#9 23.02 checking for unistd.h... yes
+#9 23.05 checking for dlfcn.h... yes
+#9 23.07 checking the maximum length of command line arguments... 1572864
+#9 23.07 checking command to parse /usr/bin/nm -B output from cc object... ok
+#9 23.13 checking for objdir... .libs
+#9 23.13 checking for ar... ar
+#9 23.13 checking for ranlib... ranlib
+#9 23.13 checking for strip... strip
+#9 23.18 checking if cc supports -fno-rtti -fno-exceptions... no
+#9 23.19 checking for cc option to produce PIC... -fPIC
+#9 23.20 checking if cc PIC flag -fPIC works... yes
+#9 23.21 checking if cc static flag -static works... yes
+#9 23.27 checking if cc supports -c -o file.o... yes
+#9 23.29 checking whether the cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+#9 23.30 checking whether -lc should be explicitly linked in... no
+#9 23.33 checking dynamic linker characteristics... GNU/Linux ld.so
+#9 23.34 checking how to hardcode library paths into programs... immediate
+#9 23.34 checking whether stripping libraries is possible... yes
+#9 23.34 checking if libtool supports shared libraries... yes
+#9 23.34 checking whether to build shared libraries... yes
+#9 23.34 checking whether to build static libraries... no
+#9 23.45 
+#9 23.45 creating libtool
+#9 23.47 appending configuration tag "CXX" to libtool
+#9 23.52 configure: patching config.h.in
+#9 23.52 configure: creating ./config.status
+#9 23.56 config.status: creating config.h
+#9 23.60 /bin/bash /usr/src/php/ext/mbstring/libtool --tag=CC --mode=compile cc -I. -I/usr/src/php/ext/mbstring -I/usr/src/php/ext/mbstring/include -I/usr/src/php/ext/mbstring/main -I/usr/src/php/ext/mbstring -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/mbstring/libmbfl -I/usr/src/php/ext/mbstring/libmbfl/mbfl  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE    -DONIG_ESCAPE_UCHAR_COLLISION=1 -DUChar=OnigUChar -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/mbstring/mbstring.c -o mbstring.lo  -MMD -MF mbstring.dep -MT mbstring.lo
+#9 23.68 mkdir .libs
+#9 23.68  cc -I. -I/usr/src/php/ext/mbstring -I/usr/src/php/ext/mbstring/include -I/usr/src/php/ext/mbstring/main -I/usr/src/php/ext/mbstring -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/mbstring/libmbfl -I/usr/src/php/ext/mbstring/libmbfl/mbfl -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -DONIG_ESCAPE_UCHAR_COLLISION=1 -DUChar=OnigUChar -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -DZEND_COMPILE_DL_EXT=1 -c /usr/src/php/ext/mbstring/mbstring.c -MMD -MF mbstring.dep -MT mbstring.lo  -fPIC -DPIC -o .libs/mbstring.o
