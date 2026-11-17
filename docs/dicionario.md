@@ -8,12 +8,12 @@ nela, quem lê e quais regras de negócio ela carrega. O diagrama visual fica em
 <summary><h2>Clique aqui para expandir a gaveta<h2></summary>
 
 Aqui dentro você coloca o conteúdo oculto.
-* Pode usar listas.
-* **Negrito** e *itálico*.
-* Blocos de código.
+
+- Pode usar listas.
+- **Negrito** e _itálico_.
+- Blocos de código.
 
 </details>
-
 
 ## teams
 

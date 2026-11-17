@@ -34,28 +34,28 @@ Pré-requisitos: Docker e Docker Compose instalados.
 
 1. Copiar o arquivo de ambiente:
 
-   cp .env.example .env
+    cp .env.example .env
 
 2. Subir os containers:
 
-   docker compose up -d
+    docker compose up -d
 
 3. Instalar dependências PHP:
 
-   docker compose exec app composer install
+    docker compose exec app composer install
 
 4. Gerar a chave da aplicação:
 
-   docker compose exec app php artisan key:generate
+    docker compose exec app php artisan key:generate
 
 5. Rodar as migrations e seeders:
 
-   docker compose exec app php artisan migrate --seed
+    docker compose exec app php artisan migrate --seed
 
 6. Instalar dependências do frontend e compilar:
 
-   docker compose exec app npm install
-   docker compose exec app npm run dev
+    docker compose exec app npm install
+    docker compose exec app npm run dev
 
 A aplicação fica disponível em http://localhost:8000
 
@@ -83,21 +83,21 @@ prefixo `docker compose exec app`.
 
 ## Estrutura de pastas
 
-| Pasta | Responsabilidade |
-| --- | --- |
-| `app/Actions` | Operações que gravam ou alteram dados |
-| `app/Concerns` | Traits compartilhadas |
-| `app/Data` | DTOs |
-| `app/Enums` | Valores fixos tipados |
-| `app/Http/Controllers` | Orquestração |
-| `app/Http/Middleware` | Filtros de requisição |
-| `app/Http/Requests` | Validação |
-| `app/Http/Responses` | Redirecionamento pós-login |
-| `app/Models` | Eloquent |
-| `app/Notifications` | Avisos |
-| `app/Policies` | Autorização |
-| `app/Providers` | Bootstrap |
-| `app/Rules` | Regras de validação customizadas |
+| Pasta                  | Responsabilidade                      |
+| ---------------------- | ------------------------------------- |
+| `app/Actions`          | Operações que gravam ou alteram dados |
+| `app/Concerns`         | Traits compartilhadas                 |
+| `app/Data`             | DTOs                                  |
+| `app/Enums`            | Valores fixos tipados                 |
+| `app/Http/Controllers` | Orquestração                          |
+| `app/Http/Middleware`  | Filtros de requisição                 |
+| `app/Http/Requests`    | Validação                             |
+| `app/Http/Responses`   | Redirecionamento pós-login            |
+| `app/Models`           | Eloquent                              |
+| `app/Notifications`    | Avisos                                |
+| `app/Policies`         | Autorização                           |
+| `app/Providers`        | Bootstrap                             |
+| `app/Rules`            | Regras de validação customizadas      |
 
 ## Convenções
 
