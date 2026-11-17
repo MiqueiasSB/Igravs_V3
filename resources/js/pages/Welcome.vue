@@ -1,49 +1,110 @@
 <script setup lang="ts">
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
+import {
+    ChevronLeft,
+    UserRound,
+    Church,
+    Droplet,
+} from '@lucide/vue';
+
 import { dashboard, login } from '@/routes';
-import { register } from '@/routes';
+import AppLogoIcon from '@/components/AppLogoIcon.vue';
 
 const page = usePage();
+
 const dashboardUrl = computed(() =>
-    page.props.currentTeam ? dashboard(page.props.currentTeam.slug).url : '/',
+    page.props.currentTeam
+        ? dashboard(page.props.currentTeam.slug).url
+        : '/',
+);
+
+const backUrl = computed(() =>
+    page.props.auth.user ? dashboardUrl.value : '/',
 );
 </script>
 
 <template>
 
-    <Head title="Welcome">
-        <link rel="preconnect" href="https://rsms.me/" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    </Head>
-    <div
-        class="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
-        <header class="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl">
-            <nav class="flex items-center justify-end gap-4">
-                <Link v-if="$page.props.auth.user" :href="dashboardUrl"
-                    class="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]">
-                    Dashboard
-                </Link>
-                <template v-else>
-                    <Link :href="login()"
-                        class="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]">
-                        Log in
-                    </Link>
-                    <Link :href="register()"
-                        class="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]">
-                        Register
-                    </Link>
-                </template>
-            </nav>
-        </header>
-        <div
-            class="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
-            
-            <h1 class="text-center text-4xl font-bold leading-tight tracking-tighter lg:text-5xl">
-                Welcome to <span class="text-[#FBBF24] dark:text-[#FBBF24]">Igravs</span>
-            </h1>
+    <Head title="Selecionar perfil" />
 
-        </div>
-        <div class="hidden h-14.5 lg:block"></div>
-    </div>
+    <main class="relative flex min-h-screen flex-col overflow-hidden
+               bg-[#F8F7F4] px-5 py-6 text-[#666666]
+               sm:px-8 sm:py-8">
+
+        <!-- Conteúdo central -->
+        <section class="flex flex-1 flex-col items-center justify-center
+                   pb-10 pt-12 sm:pt-6">
+
+            <!-- Logo -->
+            <div class="mb-1 flex items-center justify-center rounded-md">
+                <AppLogoIcon class="size-40 fill-current text-[var(--foreground)] dark:text-white" />
+            </div>
+
+            <!-- Título -->
+            <h1 class="mb-12 font-signika text-5xl font-extrabold tracking-tight
+                       text-sidebar-foreground sm:text-5xl">
+                Igravs
+            </h1>
+            <h2 class="mb-8 text-center font-signika text-2xl
+                       font-medium text-[#686868]
+                       sm:mb-10 sm:text-3xl">
+                Entrar como...
+            </h2>
+
+            <!-- Opções de perfil -->
+            <div class="grid w-full max-w-[640px] grid-cols-1
+                       gap-6 sm:grid-cols-2 sm:gap-10">
+
+                <!-- Membro -->
+                <Link :href="login()" class="group flex min-h-[210px] flex-col
+                           items-center justify-center gap-4
+                           rounded-[24px] border border-[#EAE8E5]
+                           bg-white px-6 py-8 shadow-sm
+                           transition-all duration-300
+                           hover:-translate-y-1 hover:border-[#48C6D2]
+                           hover:shadow-lg
+                           focus-visible:outline-2
+                           focus-visible:outline-offset-4
+                           focus-visible:outline-[#48C6D2]
+                           sm:min-h-[240px]">
+                    <UserRound :size="88" :stroke-width="1.35" class="text-[#6A6A6A] transition-colors
+                               duration-300 group-hover:text-[#2ABCCB]" />
+
+                    <span class="font-signika text-2xl font-medium
+                               text-[#686868]
+                               transition-colors duration-300
+                               group-hover:text-[#269BA8]
+                               sm:text-3xl">
+                        Membro
+                    </span>
+                </Link>
+
+                <!-- Administrador -->
+                <Link :href="login()" class="group flex min-h-[210px] flex-col
+                           items-center justify-center gap-4
+                           rounded-[24px] border border-[#EAE8E5]
+                           bg-white px-6 py-8 shadow-sm
+                           transition-all duration-300
+                           hover:-translate-y-1 hover:border-[#A42682]
+                           hover:shadow-lg
+                           focus-visible:outline-2
+                           focus-visible:outline-offset-4
+                           focus-visible:outline-[#A42682]
+                           sm:min-h-[240px]">
+                    <Church :size="88" :stroke-width="1.35" class="text-[#6A6A6A] transition-colors
+                               duration-300 group-hover:text-[#A42682]" />
+
+                    <span class="font-signika text-2xl font-medium
+                               text-[#686868]
+                               transition-colors duration-300
+                               group-hover:text-[#A42682]
+                               sm:text-3xl">
+                        Administrador
+                    </span>
+                </Link>
+
+            </div>
+        </section>
+    </main>
 </template>

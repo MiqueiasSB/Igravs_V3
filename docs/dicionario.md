@@ -4,6 +4,17 @@ Este documento descreve cada tabela do banco, o que ela representa, quem escreve
 nela, quem lê e quais regras de negócio ela carrega. O diagrama visual fica em
 `docs/database/database.svg`.
 
+<details>
+<summary><h2>Clique aqui para expandir a gaveta<h2></summary>
+
+Aqui dentro você coloca o conteúdo oculto.
+* Pode usar listas.
+* **Negrito** e *itálico*.
+* Blocos de código.
+
+</details>
+
+
 ## teams
 
 **O que é:** a igreja. É a raiz de todo o sistema — todo dado chega nela por
