@@ -8,7 +8,8 @@
         "dev": "vp dev",
         "check": "vp check",
         "check:fix": "vp check --fix",
-        "types:check": "vue-tsc --noEmit"
+        "types:check": "vue-tsc --noEmit",
+        "prepare": "husky"
     },
     "dependencies": {
         "@fontsource-variable/signika-negative": "^5.3.0",
@@ -32,6 +33,8 @@
         "@types/node": "^22.13.5",
         "@vitejs/plugin-vue": "^6.0.0",
         "concurrently": "^10.0.3",
+        "husky": "^9.1.7",
+        "lint-staged": "^17.6.1",
         "typescript": "^5.2.2",
         "vite": "npm:@voidzero-dev/vite-plus-core@1.4.0",
         "vite-plus": "1.4.0",
@@ -48,5 +51,9 @@
     },
     "overrides": {
         "vite": "npm:@voidzero-dev/vite-plus-core@1.4.0"
+    },
+    "lint-staged": {
+        "*.{md,yml,yaml,json}": "vp check --fix",
+        "*.{js,ts,vue,css}": "vp check --fix"
     }
 }
