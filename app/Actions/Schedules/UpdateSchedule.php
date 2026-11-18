@@ -6,6 +6,9 @@ use App\Models\Schedule;
 
 class UpdateSchedule
 {
+    /**
+     * @param  array<string, mixed>  $data
+     */
     public function update(Schedule $schedule, array $data): Schedule
     {
         $schedule->update([

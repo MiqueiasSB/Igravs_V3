@@ -51,6 +51,7 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
+    /** @return Collection<int, Team> */
     public function allTeams(): Collection
     {
         return $this->ownedTeams->merge($this->teams);

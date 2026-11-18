@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Service extends Model
 {
@@ -12,18 +14,21 @@ class Service extends Model
         'date' => 'date',
     ];
 
-    public function team()
+    /** @return BelongsTo<Team, $this> */
+    public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class);
     }
 
-    public function schedules()
+    /** @return HasMany<Schedule, $this> */
+    public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);
     }
 
-    public function setlists()
+    /** @return HasMany<Setlist, $this> */
+    public function setlists(): HasMany
     {
-        return $this->hasMany(Setlist::class)->orderBy('position');
+        return $this->hasMany(Setlist::class);
     }
 }
