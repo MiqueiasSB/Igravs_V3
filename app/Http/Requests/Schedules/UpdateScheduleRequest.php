@@ -4,6 +4,7 @@ namespace App\Http\Requests\Schedules;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateScheduleRequest extends FormRequest
 {

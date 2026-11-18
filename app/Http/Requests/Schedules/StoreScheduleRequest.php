@@ -1,9 +1,8 @@
 <?php
 
-// app/Http/Requests/Schedules/StoreScheduleRequest.php
-
 namespace App\Http\Requests\Schedules;
 
+use App\Models\Team;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -11,11 +10,18 @@ class StoreScheduleRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return $this->user()->can('manageSchedules', $this->route('team'));
+        /** @var Team $team */
+        $team = $this->route('team');
+
+        return $this->user()->can('manageSchedules', $team);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function rules(): array
     {
+        /** @var Team $team */
         $team = $this->route('team');
 
         return [

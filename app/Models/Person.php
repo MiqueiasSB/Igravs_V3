@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Person extends Model
 {
@@ -14,22 +16,22 @@ class Person extends Model
         'active' => 'boolean',
     ];
 
-    public function team()
+    public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class);
     }
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function roles()
+    public function roles(): HasMany
     {
         return $this->hasMany(PersonRole::class);
     }
 
-    public function schedules()
+    public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);
     }

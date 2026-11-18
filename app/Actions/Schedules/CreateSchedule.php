@@ -7,6 +7,9 @@ use App\Models\Service;
 
 class CreateSchedule
 {
+    /**
+     * @param  array<string, mixed>  $data
+     */
     public function create(Service $service, array $data): Schedule
     {
         return $service->schedules()->create([

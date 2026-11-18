@@ -1,0 +1,7 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Access to an undefined property App\\Models\\Schedule\:\:\$service\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Policies/SchedulePolicy.php
