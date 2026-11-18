@@ -32,6 +32,7 @@ enum TeamRole: string
                 TeamPermission::CancelInvitation,
             ],
             self::Member => [],
+            self::Leader => []
         };
     }
 

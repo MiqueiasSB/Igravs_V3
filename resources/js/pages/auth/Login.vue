@@ -16,8 +16,9 @@ import type { TeamInvitationContext } from '@/types';
 
 defineOptions({
     layout: {
-        title: 'Log in to your account',
-        description: 'Enter your email and password below to log in',
+        title: 'Entre em sua Conta',
+        description:
+            'Entre em sua conta para acessar o painel de administração.',
     },
 });
 
@@ -52,7 +53,7 @@ defineProps<{
     >
         <div class="grid gap-6">
             <div class="grid gap-2">
-                <Label for="email">Email address</Label>
+                <Label for="email">Endereço de e-mail</Label>
                 <Input
                     id="email"
                     type="email"
@@ -68,14 +69,14 @@ defineProps<{
 
             <div class="grid gap-2">
                 <div class="flex items-center justify-between">
-                    <Label for="password">Password</Label>
+                    <Label for="password">Senha</Label>
                     <TextLink
                         v-if="canResetPassword"
                         :href="request()"
                         class="text-sm"
                         :tabindex="5"
                     >
-                        Forgot password?
+                        Esqueceu sua senha?
                     </TextLink>
                 </div>
                 <PasswordInput
@@ -92,7 +93,7 @@ defineProps<{
             <div class="flex items-center justify-between">
                 <Label for="remember" class="flex items-center space-x-3">
                     <Checkbox id="remember" name="remember" :tabindex="3" />
-                    <span>Remember me</span>
+                    <span>Lembrar</span>
                 </Label>
             </div>
 
@@ -104,12 +105,12 @@ defineProps<{
                 data-test="login-button"
             >
                 <Spinner v-if="processing" />
-                Log in
+                Entrar
             </Button>
         </div>
 
         <div class="text-center text-sm text-muted-foreground">
-            Don't have an account?
+            Não tem conta?
             <TextLink
                 :href="
                     register({
@@ -121,7 +122,7 @@ defineProps<{
                 :tabindex="5"
                 data-test="register-link"
             >
-                Sign up
+                Cadastrar-se
             </TextLink>
         </div>
     </Form>

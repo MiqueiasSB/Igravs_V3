@@ -50,4 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+
+    /** @return Collection<int, Team> */
+    public function allTeams(): Collection
+    {
+        return $this->ownedTeams->merge($this->teams);
+    }
 }
