@@ -53,7 +53,7 @@
         "vite": "npm:@voidzero-dev/vite-plus-core@1.4.0"
     },
     "lint-staged": {
-        "*.{md,yml,yaml,json}": "vp check --fix",
-        "*.{js,ts,vue,css}": "vp check --fix"
+        "*.{js,ts,vue,css,md,yml,yaml,json}": "npx vp check --fix",
+        "*.php": "./vendor/bin/pint"
     }
 }
