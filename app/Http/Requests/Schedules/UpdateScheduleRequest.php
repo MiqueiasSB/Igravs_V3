@@ -20,7 +20,7 @@ class UpdateScheduleRequest extends FormRequest
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
-   public function rules(): array
+    public function rules(): array
     {
         return [
             'role' => ['required', 'string', 'max:50'],

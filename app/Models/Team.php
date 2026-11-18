@@ -35,7 +35,6 @@ class Team extends Model
     /**
      * Bootstrap the model and its traits.
      */
-
     public function people()
     {
         return $this->hasMany(Person::class);
@@ -45,7 +44,7 @@ class Team extends Model
     {
         return $this->hasMany(Service::class);
     }
-    
+
     protected static function boot(): void
     {
         parent::boot();

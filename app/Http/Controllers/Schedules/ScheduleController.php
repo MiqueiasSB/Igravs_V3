@@ -1,5 +1,7 @@
 <?php
+
 // app/Http/Controllers/Schedules/ScheduleController.php
+
 namespace App\Http\Controllers\Schedules;
 
 use App\Actions\Schedules\CreateSchedule;

@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Schedules\ScheduleController;
 use App\Http\Controllers\Teams\TeamInvitationController;
 use App\Http\Middleware\EnsureTeamMembership;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Schedules\ScheduleController;
 
 Route::inertia('/', 'Welcome')->name('home');
 
@@ -44,4 +44,3 @@ require __DIR__.'/settings.php';
 | DELETE      | /fotos/{foto}       | destroy | fotos.destroy
 |
 */
-

@@ -1,7 +1,7 @@
 <?php
 
 return [
-     'accepted' => 'O campo :attribute deve ser aceito.',
+    'accepted' => 'O campo :attribute deve ser aceito.',
     'accepted_if' => 'O campo :attribute deve ser aceito quando :other for :value.',
     'active_url' => 'O campo :attribute não é uma URL válida.',
     'after' => 'O campo :attribute deve ser uma data posterior a :date.',
@@ -60,7 +60,7 @@ return [
     'image' => 'O campo :attribute deve ser uma imagem.',
     'in' => 'O valor selecionado para :attribute é inválido.',
     'in_array' => 'O campo :attribute deve existir em :other.',
-       'integer' => 'O campo :attribute deve ser um número inteiro.',
+    'integer' => 'O campo :attribute deve ser um número inteiro.',
     'ip' => 'O campo :attribute deve ser um endereço IP válido.',
     'ipv4' => 'O campo :attribute deve ser um endereço IPv4 válido.',
     'ipv6' => 'O campo :attribute deve ser um endereço IPv6 válido.',
@@ -119,7 +119,7 @@ return [
     'present_with_all' => 'O campo :attribute deve estar presente quando :values estiverem presentes.',
     'prohibited' => 'O campo :attribute é proibido.',
     'prohibited_if' => 'O campo :attribute é proibido quando :other for :value.',
-     'prohibited_if_accepted' => 'O campo :attribute é proibido quando :other for aceito.',
+    'prohibited_if_accepted' => 'O campo :attribute é proibido quando :other for aceito.',
     'prohibited_if_declined' => 'O campo :attribute é proibido quando :other for recusado.',
     'prohibited_unless' => 'O campo :attribute é proibido a menos que :other esteja em :values.',
     'prohibits' => 'O campo :attribute proíbe que :other esteja presente.',
@@ -178,7 +178,7 @@ return [
         'cnpj' => 'CNPJ',
         'birth_date' => 'data de nascimento',
         'avatar' => 'foto de perfil',
-          'file' => 'arquivo',
+        'file' => 'arquivo',
         'image' => 'imagem',
         'price' => 'preço',
         'quantity' => 'quantidade',

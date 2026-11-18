@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
-        protected $fillable = ['team_id', 'date', 'time', 'type'];
+    protected $fillable = ['team_id', 'date', 'time', 'type'];
 
     protected $casts = [
         'date' => 'date',

@@ -39,7 +39,7 @@ class CreateNewUser implements CreatesNewUsers
             ]);
 
             $this->createTeam->handle($user, $user->name."'s Team", isPersonal: false);
-            //Por padrão do started Kit estava true, mas isso cria uma igreja para cada usuário
+            // Por padrão do started Kit estava true, mas isso cria uma igreja para cada usuário
 
             return $user;
         });
