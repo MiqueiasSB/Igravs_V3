@@ -9,7 +9,8 @@
         "check": "vp check",
         "check:fix": "vp check --fix",
         "types:check": "vue-tsc --noEmit",
-        "prepare": "husky"
+        "prepare": "husky",
+        "lint:all": "@php artisan config:clear && vendor/bin/pint && vendor/bin/phpstan analyse --no-progress && npx vp check --fix"
     },
     "dependencies": {
         "@fontsource-variable/signika-negative": "^5.3.0",

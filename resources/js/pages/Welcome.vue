@@ -21,7 +21,7 @@ const backUrl = computed(() =>
     <Head title="Selecionar perfil" />
 
     <main
-        class="relative flex min-h-screen flex-col overflow-hidden bg-[#F8F7F4] px-5 py-6 text-[#666666] sm:px-8 sm:py-8"
+        class="bg-backgraund relative flex min-h-screen flex-col overflow-hidden px-5 py-6 text-[#666666] sm:px-8 sm:py-8"
     >
         <!-- Conteúdo central -->
         <section

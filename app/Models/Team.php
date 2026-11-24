@@ -26,7 +26,7 @@ use Illuminate\Support\Carbon;
  * @property-read Collection<int, Membership> $memberships
  * @property-read Collection<int, User> $members
  */
-#[Fillable(['name', 'slug', 'city', 'plan', 'trial_ends_at', 'is_personal'])]
+#[Fillable(['name', 'slug', 'city', 'denomination', 'plan', 'trial_ends_at', 'onboarding_completed_at'])]
 class Team extends Model
 {
     /** @use HasFactory<TeamFactory> */

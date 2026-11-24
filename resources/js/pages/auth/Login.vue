@@ -30,7 +30,7 @@ defineProps<{
 </script>
 
 <template>
-    <Head title="Log in" />
+    <Head title="Entrar" />
 
     <div
         v-if="status"
@@ -62,7 +62,7 @@ defineProps<{
                     v-focus
                     :tabindex="1"
                     autocomplete="email"
-                    placeholder="email@example.com"
+                    placeholder="email@exemplo.com"
                 />
                 <InputError :message="errors.email" />
             </div>
@@ -85,7 +85,7 @@ defineProps<{
                     required
                     :tabindex="2"
                     autocomplete="current-password"
-                    placeholder="Password"
+                    placeholder="Senha"
                 />
                 <InputError :message="errors.password" />
             </div>

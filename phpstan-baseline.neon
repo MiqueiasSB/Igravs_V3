@@ -2,13 +2,6 @@ includes:
     - vendor/larastan/larastan/extension.neon
 
 parameters:
-    level: 6
+    level: 5
     paths:
         - app
-
-    ignoreErrors:
-        -
-            message: '#^Access to an undefined property App\\Models\\Schedule\:\:\$service\.$#'
-            identifier: property.notFound
-            count: 3
-            path: app/Policies/SchedulePolicy.php
